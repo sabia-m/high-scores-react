@@ -16,12 +16,10 @@ const HighScoreTable = (props) => (
       
     {data.scores.map((data) => {
     return (
-    //<div className="name-score">
     <tr>
     <td className="person-name">{data.n.toUpperCase()}</td>
     <td className="person-score"> {data.s}</td>
     </tr>
-    //</div>
     );
     })}
 
