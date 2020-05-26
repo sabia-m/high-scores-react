@@ -1,3 +1,7 @@
+body {
+  font-family: 'Courier New';
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +40,43 @@
     transform: rotate(360deg);
   }
 }
+
+.country-scores {
+  display: flex;
+justify-content: center;
+flex-direction: row;
+}
+
+.country {
+  text-align: center;
+  font-size: 20px;
+  color: cornflowerblue;
+}
+
+.table {
+width: 40%;
+margin-right: auto;
+margin-left: auto;
+border: 10px solid greenyellow;
+/* background-color: salmon; */
+}
+
+.person-name {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(11, 70, 67);
+  font-weight: bold;
+}
+
+.person-score {
+  text-align: right;
+  font-size: 16px;
+  color: maroon;
+  font-weight: bolder;
+}
+
+.heading {
+  text-align: center;
+  color: cornflowerblue;
+}
+
