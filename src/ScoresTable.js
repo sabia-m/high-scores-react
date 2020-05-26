@@ -1,7 +1,6 @@
 import React from "react";
 
-const HighScoreTable = (props) => (
-
+function HighScoreTable(props){
 <div className="countries-data">
 <h1 className="heading">High Scores per Country</h1>
 
@@ -29,6 +28,6 @@ const HighScoreTable = (props) => (
     })}
 
     </div>
-  );
+  }
   export default HighScoreTable;
 
