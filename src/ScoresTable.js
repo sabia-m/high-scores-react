@@ -1,10 +1,12 @@
 import React from "react";
 
 function HighScoreTable(props){
+  return (
 <div className="countries-data">
 <h1 className="heading">High Scores per Country</h1>
 
-  {props.allScores.map((data) => {
+  {props.allScores.sort((data, data2) => data.name.localeCompare(data2.name))
+  .map((data) => {
     return (
     <table className="table">
     <thead className="thead">
@@ -28,6 +30,5 @@ function HighScoreTable(props){
     })}
 
     </div>
-  }
+  )}
   export default HighScoreTable;
-
