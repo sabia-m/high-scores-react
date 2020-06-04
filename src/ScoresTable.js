@@ -15,7 +15,8 @@ function HighScoreTable(props){
     </tr>
     </thead>
       
-    {data.scores.map((data) => {
+    {data.scores.sort((data, data2) => data2.s - data.s)
+    .map((data) => {
     return (
     <tr>
     <td className="person-name">{data.n.toUpperCase()}</td>
