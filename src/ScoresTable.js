@@ -1,9 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
 
 function HighScoreTable(props){
+
+  const [scoresList, setScoresList] = useState(true) 
+
+  function onButtonClick() {
+
+    if (scoresList === true){
+      props.allScores.map(data => data.scores.sort((data, data2) => data.s - data2.s))
+      setScoresList (false) 
+    } 
+
+    else {
+      props.allScores.map(data => data.scores.sort((data, data2) => data2.s - data.s))
+      setScoresList (true)
+    }
+  }
+
+  /*
+
+  attempt to rewrite if statement with ternary --- not correct
+
+  scoresList === true ? (
+    props.allScores.map(data => data.scores.sort((data, data2) => data.s - data2.s))
+    setScoresList (false)
+    ) : (
+      props.allScores.map(data => data.scores.sort((data, data2) => data2.s - data.s))
+      setScoresList (true)
+    ) 
+  )
+
+  */
+
   return (
 <div className="countries-data">
 <h1 className="heading">High Scores per Country</h1>
+
+<div className="scores-button"><button className="button" onClick={onButtonClick}>Sort Scores by Ascending / Descending</button></div>
+
 
   {props.allScores.sort((data, data2) => data.name.localeCompare(data2.name))
   .map((data) => {
@@ -15,7 +49,9 @@ function HighScoreTable(props){
     </tr>
     </thead>
       
-    {data.scores.sort((data, data2) => data2.s - data.s)
+    {data.scores
+    // .sort((data, data2) => data2.s - data.s) - for ascending / descending button to work, this line need to be removed.
+
     .map((data) => {
     return (
     <tr>
